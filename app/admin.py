@@ -17,6 +17,8 @@ import string
 import os
 from flask_babel import _
 
+SKIP_LIBCHECK = bool(int(os.getenv("SKIP_LIBCHECK") or 0))
+
 
 def login_required(f):
     @wraps(f)
@@ -196,7 +198,7 @@ def preferences():
             discord_widget = request.form.get("discord_widget")
             libraries = [request.form.get("library_{}".format(i)) for i in range(int(
                 request.form.get("library_count")) + 1) if request.form.get("library_{}".format(i))]
-            if not libraries:
+            if not libraries and not SKIP_LIBCHECK:
                 return render_template("verify-server.html", error=_("You must select at least one library."))
 
             settings['server_name'].value = server_name

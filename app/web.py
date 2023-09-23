@@ -88,7 +88,7 @@ def wizard(action):
     server_type = settings.get("server_type", "")
 
     # Build list of steps
-    steps = [f"wizard/{server_type}/download.html",]
+    steps = [f"wizard/{server_type}/tips.html",]
 
     if settings.get("request_url"):
         steps.append("wizard/requests.html")
@@ -102,7 +102,7 @@ def wizard(action):
     if settings.get("custom_html"):
         steps.append("wizard/custom.html")
 
-    steps.append(f"wizard/{server_type}/tips.html")
+    steps.append(f"wizard/{server_type}/download.html")
 
     # Render template for next or previous step
     if action == "next":

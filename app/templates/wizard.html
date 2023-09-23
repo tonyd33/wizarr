@@ -10,11 +10,11 @@ Download Plex
 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 
     {% if server_type == "plex" %}
-    {% include "wizard/plex/download.html" %}
+    {% include "wizard/plex/tips.html" %}
     {% endif %}
 
     {% if server_type == "jellyfin" %}
-    {% include "wizard/jellyfin/download.html" %}
+    {% include "wizard/jellyfin/tips.html" %}
     {% endif %}
 
     <div class="flex flex-col items-center py-2">
