@@ -1,46 +1,181 @@
-<div id="wizard"
-    class="animate__animated {% if prev %} animate__fadeInLeft {% endif %} {% if next %} animate__fadeInRight {% endif %}  p-6 max-w-m bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div
+    id="wizard"
+    class="relative animate__animated {% if prev %} animate__fadeInLeft {% endif %} {% if next %} animate__fadeInRight {% endif %} p-6 max-w-m bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+>
+    <!-- Top Right Link -->
+    <a
+        href="{{url_for('guide')}}"
+        class="mb-3 text-base dark:text-gray-400 absolute top-0 right-0 p-2 mr-2"
+    >
+        <span class="emoji">&#x1F4C3;</span> {{ _("Guide") }}</a
+    >
+
     <h4 class="mb-3 text-xl font-bold dark:text-white">
-        ℹ️ {{ _("Eh, So, What is Jellyfin exactly?") }}
+        <span class="emoji">&#128161;</span> {{ _("What is Jellyfin?") }}
     </h4>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {{ _("Jellyfin is a platform that lets you stream all your favorite movies, TV shows, and music in one place.
-        It's like having your own personal movie theater right at your fingertips! Think of it as a digital library of
-        your favorite content that you can access from anywhere, on any device - your phone, tablet, laptop, smart TV,
-        you name it.") }}</p>
-    <br>
+
+    <ul class="mb-3 text-gray-700, dark:text-gray-400 pl-5">
+        <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg
+                class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+            <span
+                >{{ _("Stream movies, TV shows, and music in one place")
+                }}</span
+            >
+        </li>
+        <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg
+                class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+            <span
+                >{{ _("Access your personal digital library on ") }}<span
+                    class="font-bold"
+                    >ANY</span
+                >{{ _(" device") }}</span
+            >
+        </li>
+
+        <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg
+                class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+            <span>{{ _("Easy to use and set up ") }}</span>
+        </li>
+    </ul>
+
+    <br />
     <h4 class="mb-3 text-xl font-bold dark:text-white">
-        🍿 {{ _("Right, so how do I watch stuff?") }}
+        <span class="emoji">🍿</span> {{ _("Request Your Favourite Shows") }}
     </h4>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {{ _("It couldn't be simpler! Jellyfin is available on a wide variety of devices including laptops, tablets,
-        smartphones, and TVs. All you need to do is download the Jellyfin app on your device, sign in with your account,
-        and
-        you're ready to start streaming your media. It's that easy!") }}</p>
-    <br>
+
+    <!-- Request for shows link -->
+    <p class="mb-3 text-gray-700 dark:text-gray-400 pl-5">
+        {{ _("Can't find what you're looking for? Request movies/shows easily
+        through our ") }}
+        <a
+            href="{{ request_url }}"
+            class="hover:underline text-primary focus:outline-none dark:focus:ring-primary_hove"
+        >
+            {{ _("request link") }}
+        </a>
+    </p>
+
+    <br />
 
     <div class="text-center">
-        <a href="/setup/open-jellyfin" target="_blank"
-            class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary_hover focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-primary dark:hover:bg-primary_hover dark:focus:ring-primary_hover">
-            {{ _("Open Jellyfin") }}
-            <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <!-- Download App Link -->
+        <a
+            href="/setup/open-jellyfin"
+            target="_blank"
+            class="mr-2 inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary_hover focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-primary dark:hover:bg-primary_hover dark:focus:ring-primary_hover"
+        >
+            {{ _("Download App") }}
+            <svg
+                class="ml-2 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
                 <path
-                    d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z">
-                </path>
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                    d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                ></path>
+                <path
+                    d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                ></path>
+            </svg>
+        </a>
+
+        <!-- Request Link -->
+        <a
+            href="/setup/open-jellyfin"
+            target="_blank"
+            class="mr-2 inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary_hover focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-primary dark:hover:bg-primary_hover dark:focus:ring-primary_hover"
+        >
+            {{ _("Download App") }}
+            <svg
+                class="ml-2 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                ></path>
+                <path
+                    d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                ></path>
+            </svg>
+        </a>
+        <!-- Watch Online Link -->
+        <a
+            href="/setup/open-jellyfin"
+            target="_blank"
+            class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary_hover focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-primary dark:hover:bg-primary_hover dark:focus:ring-primary_hover"
+        >
+            {{ _("Watch Online") }}
+            <svg
+                class="ml-2 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                ></path>
+                <path
+                    d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                ></path>
             </svg>
         </a>
     </div>
-<script>
-    function toggleIndexes(openedIndexes, index) {
-        if (!openedIndexes.includes(index)) {
-            return [...openedIndexes, index]
+
+    <script>
+        function toggleIndexes(openedIndexes, index) {
+            if (!openedIndexes.includes(index)) {
+                return [...openedIndexes, index];
+            } else {
+                // remove the index from openIndex array
+                return openedIndexes.filter((i) => i !== index);
+            }
         }
-        else {
-            // remove the index from openIndex array
-            return openedIndexes.filter((i) => i !== index)
-        }
-    }
-</script>
+    </script>
 </div>
 
+<style>
+    .emoji {
+        display: inline-block;
+        width: 1.5em; /* Adjust this value to provide sufficient space for the emoji */
+        text-align: center;
+    }
+</style>

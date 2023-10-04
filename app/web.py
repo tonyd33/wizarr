@@ -50,6 +50,11 @@ def connect():
         return render_template("signup-jellyfin.html", code=code)
 
 
+@app.route('/guide', methods=["GET"])
+def guide():
+    return render_template('guide.html')
+
+
 @app.route('/setup', methods=["GET"])
 @app.route('/setup/', methods=["GET"])
 def setup():
@@ -102,6 +107,9 @@ def wizard(action):
     if settings.get("custom_html"):
         steps.append("wizard/custom.html")
 
+    if settings.get("guide.html"):
+        steps.append()
+
     steps.append(f"wizard/{server_type}/download.html")
 
     # Render template for next or previous step
@@ -135,6 +143,7 @@ def wizard(action):
         resp.headers['max'] = "0"
         resp.set_cookie('current', str(prev_step))
         return resp
+
 
 
 @app.errorhandler(500)
