@@ -1,140 +1,89 @@
-{% extends "base.html" %} {% block title %} Download Plex {% endblock %} {%
-block main %}
+{% extends "base.html" %} {% block title %} Guide {% endblock %} {% block main %}
 
 <div
-    class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+    class="md:max-w-lg flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen"
 >
     <div
-        class="p-6 max-w-m bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+        class="p-6 max-w-m bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 my-2"
     >
-        <h4 class="mb-3 text-xl font-bold dark:text-white">
-            <span class="emoji">&#128161;</span> {{ _("What is Jellyfin?") }}
+        <h4 class="flex mb-2 text-xl font-bold dark:text-white">
+            <span class="emoji mr-1">🙋‍♂️</span> How does this even work?
         </h4>
 
-        <ul class="mb-3 text-gray-700, dark:text-gray-400 pl-5">
-            <li class="flex items-center space-x-3">
-                <!-- Icon -->
-                <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span
-                    >{{ _("Stream movies, TV shows, and music in one place")
-                    }}</span
-                >
-            </li>
-            <li class="flex items-center space-x-3">
-                <!-- Icon -->
-                <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span
-                    >{{ _("Access your personal digital library on ") }}<span
-                        class="font-bold"
-                        >ANY</span
-                    >{{ _(" device") }}</span
-                >
-            </li>
+        <p class="text-gray-700 dark:text-gray-400 ml-4 px-1">
+            Tony has a media library on his home server which he makes public using
+            <a href="https://jellyfin.org/" target="_blank" class="hover:underline text-primary focus:outline-none dark:focus:ring-primary_hover">Jellyfin</a>, an open source project allowing administrators
+            to share their media.
+        </p>
+        <br/>
 
-            <li class="flex items-center space-x-3">
-                <!-- Icon -->
-                <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>{{ _("Easy to use and set up ") }}</span>
-            </li>
-        </ul>
-
-        <h4 class="mb-3 text-xl font-bold dark:text-white">
-            <span class="emoji">&#128161;</span> {{ _("What is Jellyfin?") }}
+        <h4 class="flex mb-2 text-xl font-bold dark:text-white">
+            <span class="emoji mr-1">⭐</span> What happens when I make a request?
         </h4>
+        <p class="text-gray-700 dark:text-gray-400 ml-4 px-1">
+            If Tony accepts your request, it gets fed into an automated system where black
+            magicks take place. The more recent and popular your request is, the faster
+            and more likely your request will be conjured. 🧙‍♂️
+        </p>
+        <br/>
 
-        <ul class="mb-3 text-gray-700, dark:text-gray-400 pl-5">
-            <li class="flex items-center space-x-3">
-                <!-- Icon -->
-                <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span
-                    >{{ _("Stream movies, TV shows, and music in one place")
-                    }}</span
-                >
-            </li>
-            <li class="flex items-center space-x-3">
-                <!-- Icon -->
-                <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span
-                    >{{ _("Access your personal digital library on ") }}<span
-                        class="font-bold"
-                        >ANY</span
-                    >{{ _(" device") }}</span
-                >
-            </li>
+        <h4 class="flex mb-2 text-xl font-bold dark:text-white">
+            <span class="emoji mr-1">📊</span> Setting expectations
+        </h4>
+        <p class="text-gray-700 dark:text-gray-400 ml-4 px-1">
+            As mentioned earlier, <b>Tony is personally hosting the server from his home.</b>
+            Streaming <i>does</i> use his bandwidth, though the effect is small per user.
+            no guarantees.
+        </p>
+        <hr class="my-2 border-gray-700 dark:border-gray-400">
+        <p class="text-gray-700 dark:text-gray-400 ml-4 px-1">
+            Additionally, although Tony tries to announce outages and fix them immediately,
+            he makes no guarantees on reliability.
+        </p>
+        <br/>
+        <h4 class="flex mb-2 text-xl font-bold dark:text-white">
+            <span class="emoji mr-1">👊</span> Respect
+        </h4>
+        <p class="text-gray-700 dark:text-gray-400 ml-4 px-1">
+            Please, be respectful. Tony doesn't have to share his services with anyone.
+            If anyone's caught abusing or otherwise carelessly misusing the services,
+            <em>Tony may close services to everyone, whitelisting people individually.</em>
+        </p>
 
-            <li class="flex items-center space-x-3">
-                <!-- Icon -->
-                <svg
-                    class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <span>{{ _("Easy to use and set up ") }}</span>
-            </li>
-        </ul>
+    </div>
+<div class="text-center">
+        <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg"
+        >
+            <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+            </svg>
+            <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+        </button>
     </div>
 </div>
+
 
 {% endblock %}

@@ -93,24 +93,24 @@ def wizard(action):
     server_type = settings.get("server_type", "")
 
     # Build list of steps
-    steps = [f"wizard/{server_type}/tips.html",]
+    steps = ["wizard/congrats.html", f"wizard/{server_type}/tips.html"]
 
-    if settings.get("request_url"):
-        steps.append("wizard/requests.html")
-
-    if settings.get("discord_id"):
-        if settings.get("discord_widget") == "on":
-            steps.append("wizard/discord-widget.html")
-        else:
-            steps.append("wizard/discord.html")
-
-    if settings.get("custom_html"):
-        steps.append("wizard/custom.html")
-
-    if settings.get("guide.html"):
-        steps.append()
-
-    steps.append(f"wizard/{server_type}/download.html")
+#     if settings.get("request_url"):
+#         steps.append("wizard/requests.html")
+# 
+#     if settings.get("discord_id"):
+#         if settings.get("discord_widget") == "on":
+#             steps.append("wizard/discord-widget.html")
+#         else:
+#             steps.append("wizard/discord.html")
+# 
+#     if settings.get("custom_html"):
+#         steps.append("wizard/custom.html")
+# 
+#     if settings.get("guide.html"):
+#         steps.append()
+# 
+#     steps.append(f"wizard/{server_type}/download.html")
 
     # Render template for next or previous step
     if action == "next":

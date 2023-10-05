@@ -17,8 +17,6 @@ import string
 import os
 from flask_babel import _
 
-SKIP_LIBCHECK = bool(int(os.getenv("SKIP_LIBCHECK") or 0))
-
 
 def login_required(f):
     @wraps(f)
